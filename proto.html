@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let dragon = {
+            name:"Tanya",
+            fire: true,
+            fight(){
+                return 9;
+            },
+            sing(){
+                if(this.fire) return `I am ${this.name}, the breather of fire`;
+            }
+        };
+
+        let lizard = {
+            name:"Kiki",
+            // fire: true,
+            fight(){
+                return 3;
+            }
+        }
+        //1. borrow the sing method for the lizard using bind
+        const singLizard = dragon.sing.bind(lizard) //redirection of this
+        console.log(singLizard())
+    </script>
+</body>
+</html>
