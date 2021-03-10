@@ -21,14 +21,26 @@
 
         let lizard = {
             name:"Kiki",
-            // fire: true,
             fight(){
                 return 3;
             }
         }
         //1. borrow the sing method for the lizard using bind
-        const singLizard = dragon.sing.bind(lizard) //redirection of this
-        console.log(singLizard())
+        // const singLizard = dragon.sing.bind(lizard) //redirection of this
+        // console.log(singLizard())
+
+        //2. lizard to inherit all the properties and methods of the above class
+        lizard.__proto__ = dragon  //prototype
+        console.log(lizard.sing())
+        console.log(lizard.fire)
+        console.log(lizard.fight())
+
+        //prototype chain
+        // console.log(dragon.__proto__)
+        console.log(dragon.isPrototypeOf(lizard))
+        console.log(lizard.isPrototypeOf(dragon))
+        //chaining
+        console.log(lizard.__proto__.__proto__.)
     </script>
 </body>
 </html>
