@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let url = "http://127.0.0.1:5500/bore.jpg";
+        const loadImage = url => {
+            return new Promise(function (resolve, reject) {
+                alert(url);
+                //Open a new XHR
+                var request = new XMLHttpRequest();
+                request.open('GET', url, true);
+                request.responseType    = "arraybuffer";
+                // When the request loads, check whether it was successful
+                request.onload = function () {
+                    if (request.status === 200) {
+                        // If successful, resolve the promise
+                        resolve(request.response);
+                    } else {
+                        // Otherwise, reject the promise
+                        reject(Error('An error occurred while loading image. error code:' + request.statusText));
+                    }
+                };
+
+                request.send();
+            });
+
+        };
+
+        const embedImage = url => {
+            loadImage(url).then(function (result) {
+                const img = new Image();
+
+                var binaryData = [];
+                binaryData.push(result);
+                // href = window.URL.createObjectURL(new Blob(binaryData, {type: type}));
+
+                // var imageURL = window.URL.createObjectURL(result);
+
+                var imageURL = window.URL.createObjectURL(new Blob(binaryData, {type: "Image/jpeg"}));
+
+                img.src = imageURL;
+                // img.srcObject = result;
+                document.querySelector('body').appendChild(img);
+            },
+                function (err) {
+                    console.log(err);
+                });
+        }
+        embedImage(url);
+    </script>
+</body>
+
+</html>
