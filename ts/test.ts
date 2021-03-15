@@ -40,20 +40,25 @@
  
 
 
-function add(a:string, b:string):string;
+// function add(a:string, b:string):string;
 
-function add(a:number, b:number): number;
+// function add(a:number, b:number): number;
 
-function add(a:string, b:number): number;
+// function add(a:string, b:number): number;
 
-function add(a: any, b:any): any {
-    return a + b;
-}
+// function add(a: any, b:any): any {
+//     return a + b;
+// }
 
-add("Hello", "Hii")
-add(11,22)
+// add("Hello", "Hii")
+// add(11,22)
 
 
 //interface
 //class
 //modules
+
+let list = [4,5,6]
+for(let item in list){
+    console.log(item)
+}
