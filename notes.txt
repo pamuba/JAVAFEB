@@ -1,0 +1,2 @@
+tsc --module commonjs TestShape.ts
+tsc --outfile final.js IShape.ts Circle.ts Triangle.ts TestShape.ts
