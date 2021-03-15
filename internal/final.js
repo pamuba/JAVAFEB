@@ -24,11 +24,3 @@ var Drawing;
     }());
     Drawing.Triangle = Triangle;
 })(Drawing || (Drawing = {}));
-/// <reference path="IShape.ts" />
-/// <reference path="Circle.ts" />
-/// <reference path="Triangle.ts" />
-function drawAllShapes(shapeToDraw) {
-    shapeToDraw.draw();
-}
-drawAllShapes(new Drawing.Circle());
-drawAllShapes(new Drawing.Triangle());
