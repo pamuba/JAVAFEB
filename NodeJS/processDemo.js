@@ -6,6 +6,20 @@ var Person = function(name){
     this.name = name
 }
 
+process.on('uncaughtException', function(err){
+    console.log("Uncaught Exception")
+    process.exit(1);
+})
+
+//not defined
+try{
+    nofun()
+}
+catch(ex){
+    console.log(ex.message)
+}
+
+
 
 util.inherits(Person, events.EventEmitter);
 
