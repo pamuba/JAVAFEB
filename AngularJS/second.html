@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html ng-app="myModule">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="app2.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div ng-controller="myController1">
+        <div>First Name:<input type="text" ng-model="employee.firstName"/></div>
+        <div>Last Name:<input type="text" ng-model="employee.lastName"/></div>
+        <div>Gender:<input type="text" ng-model="employee.gender"/></div>
+
+        <br>
+        <br>
+
+        <div>First Name:{{employee.firstName}}</div>
+        <div>Last Name:{{employee.lastName}}</div>
+        <div>Gender:{{employee.gender}}</div>
+    </div>
+</body>
+</html>

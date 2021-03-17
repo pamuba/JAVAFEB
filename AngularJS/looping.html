@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app="myModule">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="app3.js"></script>
+    <title>Document</title>
+    <style>
+        table{
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body style="font-family:Arial, Helvetica, sans-serif">
+    <div ng-controller="myController1">
+        <table>
+            <thead>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Gender</th>
+                <th>Salary</th>
+            </thead>
+            <tbody>
+                <tr ng-repeat="emp in employees">
+                    <td>{{ emp.firstName}}</td>
+                    <td>{{ emp.lastName}}</td>
+                    <td>{{ emp.gender}}</td>
+                    <td>{{ emp.salary}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

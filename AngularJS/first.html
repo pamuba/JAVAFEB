@@ -9,6 +9,11 @@
     <div ng-controller="myController">
         <!-- 10 + 3 = {{ 10 + 3 }} -->
         {{message}}
+        <div>Name:{{country.name}}</div>
+        <div>Capital:{{country.capital}}</div>
+        <div>
+            <img ng-src={{country.flag}} style="height:100px; width:200px"/>
+        </div>
     </div>
     <div  ng-controller="myController1">
         <!-- 10 + 3 = {{ 10 + 3 }} -->
