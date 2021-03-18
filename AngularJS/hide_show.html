@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="Script.js"></script>
+    <style>
+        
+    </style>
+</head>
+<body ng-app="myModule">
+    <div ng-controller="myController">
+        <input type="checkbox" ng-model="hideSalary" />Hide Salary
+        <br /><br />
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Gender</th>
+                    <th>City</th>
+                    <th ng-hide="hideSalary">Salary</th>
+                    <th ng-show="hideSalary">Salary</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="employee in employees">
+                    <td> {{ employee.name }} </td>
+                    <td> {{ employee.gender}} </td>
+                    <td> {{ employee.city}} </td>
+                    <td ng-hide="hideSalary"> {{ employee.salary  }} </td>
+                    <td ng-show="hideSalary"> ##### </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
