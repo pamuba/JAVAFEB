@@ -1,22 +1,25 @@
-function AppCtrl($scope){
+function AppCtrl($scope, $http){  //DI
     console.log("Hello from Controller")
 
-    person1 = {
-        name:'Jim',
-        email:'jim@gmail.com',
-        number:"(111) 111-1111"
-    };
-    person2 = {
-        name:'Tim',
-        email:'tim@gmail.com',
-        number:"(222) 222-211"
-    };
-    person3 = {
-        name:'Mary',
-        email:'mary@gmail.com',
-        number:"(111) 333-1111"
-    };
-
-    var contactList = [person1, person2, person3]
-    $scope.contactList = contactList
+    var refresh = function(){
+        $http.get('/contactlist').success(function(response){
+            console.log("I got the data from the server")
+            $scope.contactList = response
+            $scope.contact = ""
+        });
+    }
+    refresh();
+    $scope.addContact = function(){
+        console.log($scope.contact)
+        $http.post('/contactlist', $scope.contact).success(function(response){
+            console.log(response)
+            refresh();
+        });
+    }
+    $scope.remove = function(id){
+        console.log(id)
+        $http.delete('/contactlist/'+id).success(function(response){
+            refresh();
+        })
+    }
 }
