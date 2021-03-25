@@ -1,0 +1,31 @@
+<!-- <h2 *ngIf="displayName; else elseBlock">
+    Angular9
+</h2>
+
+<ng-template #elseBlock>
+    <h2>
+        React
+    </h2>
+</ng-template> -->
+
+<!-- <div *ngIf="displayName; then thenBlock; else elseBlock"></div>
+
+<ng-template #thenBlock>
+    <h2>Angular 9</h2>
+</ng-template>
+
+<ng-template #elseBlock>
+    <h2>Hidden</h2>
+</ng-template> -->
+
+<!-- <div [ngSwitch]="color">
+    <div *ngSwitchCase="'red'" [style.color]="color">Yuo Selected Red</div>
+    <div *ngSwitchCase="'blue'" [style.color]="color">Yuo Selected Blue</div>
+    <div *ngSwitchCase="'orange'">Yuo Selected Orange</div>
+    <div *ngSwitchCase="'yellow'">Yuo Selected Yellow</div>
+    <div *ngSwitchDefault>Pick Again</div>
+</div> -->
+
+<div *ngFor="let color of colors">
+    <h2 [style.color]="color">{{color}}</h2>
+</div>
