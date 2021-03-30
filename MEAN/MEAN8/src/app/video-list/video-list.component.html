@@ -1,0 +1,5 @@
+<div class="container">
+    <ul [ngClass]='["nav", "nav-pills", "flex-column"]'>
+        <li (click)="onSelect(video)" [ngClass]="['nav-item']" *ngFor="let video of videos"><a>{{video.title}}</a></li>
+    </ul>
+</div> 

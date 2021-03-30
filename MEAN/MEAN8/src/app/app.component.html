@@ -1,2 +1,13 @@
 
-<router-outlet></router-outlet>
+<nav class="navbar navbar-expand-sm navbar-dark bg-primary mb-3">
+    <div class="container">
+      <a href="#" class="navbar-brand">VIDEO PLAYER</a>
+      <ul class="navbar-nav">
+        <li class="navbar-item"><a class="nav-link" routerLink="/home" routerLinkActive="active">Home</a></li>
+        <li class="navbar-item"><a class="nav-link" routerLink="/videos" routerLinkActive="active">PlayList</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
