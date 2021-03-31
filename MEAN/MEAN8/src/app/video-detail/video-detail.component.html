@@ -1,6 +1,6 @@
 <div>
     <div>
-        <!-- <iframe [src]="video.url | safe" height="300" width="100%"></iframe> -->
+        <iframe [src]="video.url | safe" height="300" width="100%"></iframe>
     </div>
     <form>
         <div *ngIf="editTitle" class="form-group">
@@ -15,7 +15,7 @@
         <div class="form-group">
             <textarea class="form-control" rows="5" name="desc" [(ngModel)]="video.description"></textarea>
         </div>
-        <!-- <button type="button" (click)="updateVideo()" class="btn btn-primary">Update</button>
-        <button type="button" (click)="deleteVideo()" class="btn btn-danger">Delete</button> -->
+        <button type="button" (click)="updateVideo()" class="btn btn-primary">Update</button>
+        <button type="button" (click)="deleteVideo()" class="btn btn-danger">Delete</button>
     </form>
 </div>

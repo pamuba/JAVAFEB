@@ -64,7 +64,7 @@ router.post('/video', function(req, res){
 
 })
 //Update a video
-router.get('/videos/:id', function(req, res){
+router.put('/videos/:id', function(req, res){
     console.log('Updating a video')
 
     Video.findByIdAndUpdate(req.params.id,
@@ -84,7 +84,7 @@ router.get('/videos/:id', function(req, res){
         })
 });
 //delete a video
-router.get('/videos/:id', function(req, res){
+router.delete('/videos/:id', function(req, res){
     console.log('Deleting a video')
 
     Video.findByIdAndRemove(req.params.id,
