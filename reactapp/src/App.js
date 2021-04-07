@@ -13,6 +13,12 @@ import styles from './appStyles.module.css'
 import Form from './componenets/Form'
 import Fragment from './componenets/Fragments'
 import ParentComponent1 from './componenets/ParentComponent1'
+import Hero from './componenets/Hero'
+import ErrorBoundary from './componenets/ErrorBoundary'
+import ClickCounter from './componenets/ClickCounter'
+import HoverCounter from './componenets/HoverCounter';
+import ComponentC from './componenets/ComponentC';
+import { UserProvider } from './componenets/userContext'
 
 function App() {
   return (
@@ -35,7 +41,18 @@ function App() {
       {/* <Inline></Inline> */}
       {/* <Form></Form> */}
       {/* <Fragment></Fragment> */}
-      <ParentComponent1></ParentComponent1>
+      {/* <ParentComponent1></ParentComponent1> */}
+      {/* <ErrorBoundary>
+        <Hero heroName="Batman"></Hero>
+        <Hero heroName="Superman"></Hero>
+        <Hero heroName="Joker"></Hero>
+      </ErrorBoundary> */}
+      {/* <ClickCounter></ClickCounter>
+      <HoverCounter></HoverCounter> */}
+
+     <UserProvider value="Batman">
+      <ComponentC></ComponentC>
+      </UserProvider>
     </div>
   );
 }
